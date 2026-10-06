@@ -1,4 +1,4 @@
-# 🕵️‍♂️ The Writing Detective
+#  The Writing Detective
 
 > **Stylometric Authorship Attribution using Classical ML**
 
@@ -8,13 +8,13 @@ Can a machine identify an author not by the words they write, but by *how* they 
 
 ---
 
-## 📊 Key Results
+##  Key Results
 
 - **92% Test Accuracy** across the three authors on 500-word blind excerpts.
 - **Model Selection:** Logistic Regression systematically outperformed tree-based models like Random Forest. 
   - *Why?* Stylometric features (like linguistic ratios and punctuation densities) form smooth, continuous distributions. Linear classifiers are exceptionally good at discovering global hyperplane boundaries across these continuous variables, whereas Decision Trees struggle with axis-aligned, stepped splits on highly correlated continuous ratios.
 
-## ⚙️ The Feature Engineering Breakdown
+##  The Feature Engineering Breakdown
 
 Our custom Scikit-Learn `StylometricFeaturesExtractor` ignores semantics and focuses on the subconscious scaffolding of language to construct a dense numerical matrix:
 
@@ -23,7 +23,7 @@ Our custom Scikit-Learn `StylometricFeaturesExtractor` ignores semantics and foc
 3. **POS-Tag Ratios:** Density of Nouns (NN), Verbs (VB), Adjectives (JJ), and Adverbs (RB) using NLTK's Averaged Perceptron Tagger.
 4. **Sentence Variance:** The mean length and standard deviation of sentences (e.g., Poe's staccato bursts vs. Austen's flowing paragraphs).
 
-## 📈 Visualizations
+##  Visualizations
 
 The stylistic fingerprints of the authors become highly distinguishable once projected into lower dimensions.
 
@@ -33,7 +33,7 @@ The stylistic fingerprints of the authors become highly distinguishable once pro
 ![Confusion Matrix](results/confusion_matrix.png)
 *Confusion Matrix on the 20% hold-out test set.*
 
-## ⚠️ Error Analysis & Limitations
+##  Error Analysis & Limitations
 
 While highly accurate on 500-word chunks, the model exhibits known edge cases:
 - **Sample-Size Variance (Short Passages):** Excerpts under 100 words are prone to severe stylometric variance. For instance, short staccato bursts in Poe's *The Tell-Tale Heart* are occasionally misclassified as Conan Doyle due to sudden spikes in first-person pronoun usage and shortened sentence lengths.
@@ -41,7 +41,7 @@ While highly accurate on 500-word chunks, the model exhibits known edge cases:
 
 ---
 
-## 🚀 Installation & Usage
+##  Installation & Usage
 
 ### 1. Install Dependencies
 Ensure you have Python 3.8+ installed, then run:
